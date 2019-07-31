@@ -1,15 +1,30 @@
 const functions = require("./functions");
 
-// Run before and after each test
-beforeEach(() => initDatabase());
-afterEach(() => closeDatabase());
+// // Run before and after each test
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
 
-// Run before and after all tests
-beforeAll(() => initDatabase());
-afterAll(() => closeDatabase());
+// // Run before and after all tests
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
 
-const initDatabase = () => console.log("database Initialized...");
-const closeDatabase = () => console.log("database closed...");
+// const initDatabase = () => console.log("database Initialized...");
+// const closeDatabase = () => console.log("database closed...");
+
+const nameCheck = () => console.log("Checking name...");
+
+describe("Checking names", () => {
+  beforeEach(() => nameCheck());
+  test("User is Jeff", () => {
+    const user = "Jeff";
+    expect(user).toBe("Jeff");
+  });
+
+  test("User is Karen", () => {
+    const user = "Karen";
+    expect(user).toBe("Karen");
+  });
+});
 
 // To be test
 test("Adds 2 + 2 to equal 4", () => {
