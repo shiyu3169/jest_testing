@@ -41,5 +41,19 @@ test("Should be under 1600", () => {
 
 // Regex
 test("This is no I in team", () => {
-  expect("team").not.toMatch(/I/);
+  expect("team").not.toMatch(/I/i);
+});
+
+// Arrays
+test("Admin should be in usernames", () => {
+  const usernames = ["john", "karen", "admin"];
+  expect(usernames).toContain("admin");
+});
+
+// Working with async data
+test("User fetched name should be Leanee Graham ", () => {
+  expect.assertions(1);
+  return functions.fetchUser().then(data => {
+    expect(data.name).toEqual("Leanne Graham");
+  });
 });
