@@ -23,3 +23,11 @@ test("Adds 2 + 2 to NOT equal 5", () => {
 test("Should be falsy", () => {
   expect(functions.checkValue(0)).toBeFalsy();
 });
+
+// Compare objects
+test("User should be Shiyu Wang object", () => {
+  expect(functions.createUser()).toStrictEqual({
+    firstName: "Shiyu",
+    lastName: "Wang"
+  });
+});
